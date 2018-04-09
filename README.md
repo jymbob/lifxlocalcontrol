@@ -17,13 +17,15 @@ Also displays current label, IP, mac and color settings for any lights found.
 
 POST `form_data` to the same address with either `mac=aa:bb:cc:dd:ee:ff&ip=192.168.x.x` or `light=LIGHT_NAME`
 
-No other flags: toggle the light on and off
+* No other flags: toggle the light on and off
+* on/off:
+    * `level=on/off` - turn the light on or off
+    * `level=full` - turn on the light at 100% brightness
 
-`level=on/off` - turn the light on or off
-`level=full` - turn on the light at 100% brightness
+* Brightness:
+    * `dim=up/down` - increase/reduce brightness by 10%
+    * `dim=true` - continue previous dim up/down (best guess if no previous found)
 
-`dim=up/down` - increase/reduce brightness by 10%
-`dim=true` - continue previous dim up/down (best guess if no previous found)
-
-`white=warm/cool` - lower/raise light temperature by 500k
-`white=nnnn` - set light temperature to `nnnn`
+* Light temperature:
+    * `white=warm/cool` - lower/raise light temperature by 500k
+    * `white=nnnn` - set light temperature to `nnnn`
