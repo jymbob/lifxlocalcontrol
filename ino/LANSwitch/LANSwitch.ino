@@ -1,7 +1,3 @@
-#include <Timer.h>
-#include <Event.h>
-
-
 /*
  * Send a HTTP POST to a server on the LAN when a switch is pressed
  */
@@ -19,15 +15,12 @@ const uint16_t port = 7990;
 const char* path = "/lights";
 String light = "LIGHT_NAME";
 
-// Set the TX and RX pins you are using
-#define TXPIN 5
+// set the pin your button is attached to
 #define buttonPin 14
 
 boolean buttonState = LOW;
 unsigned long onTime;
 #define LEDPIN LED_BUILTIN
-
-Timer t;
 
 void setup() {
   Serial.begin(115200);
