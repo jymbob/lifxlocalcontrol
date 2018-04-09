@@ -29,3 +29,37 @@ POST `form_data` to the same address with either `mac=aa:bb:cc:dd:ee:ff&ip=192.1
 * Light temperature:
     * `white=warm/cool` - lower/raise light temperature by 500k
     * `white=nnnn` - set light temperature to `nnnn`
+
+Installation (arduino w/ Wifi)
+-----
+Edit LANSwitch.ino to set:
+
+* Your Wifi credentials (lines 8 and 9)
+* IP address, gateway and subnet of your arduino (lines 34 to 36)
+
+* Python server IP and port (lines 13 and 14)
+* Name of light to control (line 16)
+
+**Please Note:** the server values are not currently used in the http calls. Find/replace all references to `YOURHOSTIP` (lines 79, 93, 115) and `LIGHT_NAME` (lines 81, 95, 118)
+
+Thanks to salsaman for the [multi-function button code](http://forum.arduino.cc/index.php?topic=14479.0)
+
+Usage (arduino)
+-----
+1. Flash code onto the arduino
+2. Connect a momentary button between `buttonPin` and ground
+
+* single click toggles light
+* double click (tricky to get) sets light to 100%
+* hold dims
+
+Optional additional steps:
+
+1. Remove an existing light switch
+2. Wire the fitting to permanent live (if permissible by building regulations where you live)
+3. Wire in a 5V USB port behind the switch (if permissible by building regulations where you live)
+4. Shave the edges off your arduino board to fit it in the back box (so close to the perfect size)
+5. Connect a nice looking momentary switch
+6. Screw it all back together
+
+
